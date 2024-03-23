@@ -66,6 +66,8 @@ dependencies {
 
     // TODO: Remove `//` below to enable OneSignal
     //implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    implementation("com.posthog:posthog-android:3.1.15")
 }
 
 // Code for automatically copying appfilter.xml and drawable.xml

@@ -6,22 +6,34 @@ import androidx.annotation.NonNull;
 //import com.onesignal.OneSignal;
 
 import com.candybar.sample.R;
+import com.posthog.android.PostHogAndroid;
+import com.posthog.android.PostHogAndroidConfig;
+import com.posthog.android.replay.PostHogSessionReplayConfig;
 
 import candybar.lib.applications.CandyBarApplication;
 
 public class CandyBar extends CandyBarApplication {
 
-    // TODO: Remove `/*` and `*/` below to enable OneSignal
-    /*
     @Override
     public void onCreate() {
         super.onCreate();
 
-        // OneSignal Initialization
-        OneSignal.initWithContext(this);
-        OneSignal.setAppId("YOUR_ONESIGNAL_APP_ID_HERE");
+        PostHogSessionReplayConfig sessionReplayConfig = new PostHogSessionReplayConfig(
+                false, false, true, null
+        );
+
+        PostHogAndroidConfig config = new PostHogAndroidConfig(
+                "phc_pQ70jJhZKHRvDIL5ruOErnPy6xiAiWCqlL4ayELj4X8",
+                "https://app.posthog.com",
+                true,
+                true,
+                true,
+                sessionReplayConfig
+        );
+        config.setDebug(true);
+        config.setSessionReplay(true);
+        PostHogAndroid.Companion.setup(this, config);
     }
-    */
 
     @NonNull
     @Override
